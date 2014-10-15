@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <include file="Public:headinc" />
+  </head>
+  
+  <body id="index">
+    <!-- 头部 -->
+    <include file="Public:header" />
+    <div class="container mt20">
+      <div class="content">
+        <div class="colMain">
+          <div class="colMainBd mainUnTag mainUnTagShen individualPost">
+            <div class="untagTit">
+              <h1> {$val['title']} </h1>
+            </div>
+            <div class="postContainer unTagImgs pb15">
+              <div class="sectionleft sectionright ">
+                <div class="unTagImgsCon" style=" line-height:2.5em; margin-bottom:25px; font-size:14px;">
+                  {$val['content']}
+                </div>
+              </div>
+            </div>
+            <div class="adbox" style="width:468px; margin:0 auto;">
+            </div>
+            <div class="pageNext">
+              <a href="" title="下一条笑话" class="pageNextBtn"> 下一条笑话</a>
+            </div>
+            <div style="padding:20px 150px;">
+              <!-- JiaThis Button BEGIN -->
+              <div class="jiathis_style_32x32">
+                <a class="jiathis_button_qzone" title="分享到QQ空间">
+                  <span class="jiathis_txt jtico jtico_qzone"></span>
+                </a>
+                <a class="jiathis_button_tsina" title="分享到新浪微博">
+                  <span class="jiathis_txt jtico jtico_tsina"></span>
+                </a>
+                <a class="jiathis_button_tqq" title="分享到腾讯微博">
+                  <span class="jiathis_txt jtico jtico_tqq"></span>
+                </a>
+                <a class="jiathis_button_renren" title="分享到人人网">
+                  <span class="jiathis_txt jtico jtico_renren"></span>
+                </a>
+                <a class="jiathis_button_kaixin001" title="分享到开心网">
+                  <span class="jiathis_txt jtico jtico_kaixin001"></span>
+                </a>
+                <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">
+                </a>
+                <a class="jiathis_counter_style">
+                  <span class="jiathis_button_expanded jiathis_counter jiathis_bubble_style" id="jiathis_counter_15" title="累计分享2次">2</span>
+                </a>
+              </div>
+              <script type="text/javascript">
+                var jiathis_config = {
+                  url: "http://wxl.qh84.com/2921.html",
+                  summary: "哈哈哈哈哈",
+                  title: "老兄，老兄，这可使不得，使不得呀-我笑了 #http://wxl.qh84.com/Uploads/Picture/2014-08-18/53f16f29bbd9f.jpg#",
+                  shortUrl: false,
+                  hideMore: false
+                }
+              </script>
+              <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8">
+              </script>
+              <!-- JiaThis Button END -->
+            </div>
+            <div class="adbox" style="width:500px; margin:0 auto 10px;"></div>
+            <div class="afterbar" style="height:28px;">
+              <div class="vote">
+                <ul class="itemVoteContainer">
+                  <li>
+                    <a onclick="dingcai('ding','{$val['id']}',this)" href="javascript:void(0);"class="itemVoteUp" title="顶这个热门笑话">
+                      <span class="icon"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <h3 class="itemLoveCount" id="dingcai_ding_{$val['id']}">{$val['ding']}</h3>
+                  </li>
+                  <li>
+                    <a onclick="dingcai('cai','{$val['id']}',this)" href="javascript:void(0);" class="itemVoteDown" title="踩这个热门笑话">
+                      <span class="icon"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <h3 class="itemLoveCount" id="dingcai_cai_{$val['id']}">{$val['cai']}</h3>
+                  </li>
+                  <!-- 点击数字变色：在H3后追加类，赞：good,踩：meh-->
+                </ul>
+              </div>
+              <div class="shareVline fl"></div>
+              <div class="sideViews" style="">
+                <span class="sideCommentNub fr">
+                  <a href="javascript:void(0);" id="sideCommentNub"></a>
+                  <a id="sideCommentNub" href="javascript:void(0);">1</a>
+                </span>
+                <span class="sideComment fr" title="笑话评论次数"></span>
+                <div class="shareVline fr"></div>
+                <span class="sideViewNub fr">{$val['view_count']}</span>
+                <span class="sideView fr" title="笑话浏览次数"></span>
+                <div class="shareVline fr"></div>
+                <span class="sideTips fr"><a>{$val['tags']}</a></span>
+                <span class="sideTipsIcon fr" title="{$val['tags']}"></span>
+
+              </div>
+            </div>
+          </div>
+          <div class="ad630"></div>
+          <style>
+            .pinglun_box{ width:100%;} .Pj_Add_Input{ width:496px;} .ds-toolbar-buttons{
+            left:492px;} .Pj_Add_Input_reply{ width:435px;} .ds-toolbar-buttons-re{
+            left:432px;}
+          </style>
+          <script type="text/javascript">
+            $(document).ready(function() {
+              getcomment('{$val['id']}');
+            });
+          </script>
+          <div id="showcomment_{$val['id']}" style="margin-top:10px;"></div>
+          <div class="pinglun_box mb10"></div>
+          <div class="ad630"></div>
+          <div class="bottom_one">
+            <!--model1-->
+            <div class="bottom_nav bottom_nav_a"></div>
+            <div class="bottom_list">
+              <ul>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eb00cc65fcd_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 这个是丰胸吗？</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eb006f57483_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">这样才凉爽</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eaffc4bcfb0_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">我们可是两厢情愿</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eaff49e1454_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 我一个人承受不来</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eae1213dac5_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">妹子需要帮忙吗 </a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eae17925c13_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">我帮你解啊？</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eae09026f6c_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 这个酒吧,不敢来</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53eadfdc8229d_138x100.jpg" width="138"
+                    height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">海涛口味一直不轻 </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom_list_dy">
+            </div>
+            <div class="bottom_list_link">
+              <ul></ul>
+            </div>
+            <div class="bottom_list_dy"> </div>
+            <!--model2-->
+            <div class="bottom_nav bottom_nav_b bottom_nav_top"> </div>
+            <div class="bottom_list">
+              <ul>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e09fc46af56_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">内裤里面有什么</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e09f4938c74_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">我让你帮我撸一撸</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e09afcacf3f_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">我老婆出轨了</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e097d0515f7_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">老师我想上厕所 </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom_list_dy"></div>
+            <div class="bottom_list_link">
+              <ul></ul>
+            </div>
+            <div class="bottom_list_dy"></div>
+            <!--model3-->
+            <div class="bottom_nav bottom_nav_c bottom_nav_top"></div>
+            <div class="bottom_list">
+              <ul>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e092eda77bd_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 这是什么玩意儿</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e092cdc3d05_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">一辈子没失误</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e0929291a33_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">不止的吸引人</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e09264258e7_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">意外的缩紧</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e09219299f3_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 青出于蓝而胜于蓝 </a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e091d87c794_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 喜欢选美小姐</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e09160789f8_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href=""> 突然的造访</a>
+                  </div>
+                </li>
+                <li class="bottom_list_right">
+                  <a href="">
+                    <img src="__ROOT__/Uploads/Picture/2014-08-27/53e090f684a8c_138x100.jpg" width="138" height="100">
+                  </a>
+                  <div class="bottom_list_title">
+                    <a href="">问号码</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom_list_dy"> </div>
+            <div class="bottom_list_link">
+              <ul></ul>
+            </div>
+            <div class="bottom_list_dy"></div>
+          </div>
+          <div class="ad630"></div>
+        </div>
+          <!-- 右侧 -->
+          <include file="Public:righter" />
+      </div>
+      <!-- 底部 -->
+      <include file="Public:footer" />
+      <div></div>
+      <!-- mask 遮罩 -->
+      <div id="mask">
+        <iframe>
+        </iframe>
+      </div>
+      <!-- end mask 遮罩 -->
+      <!-- pop 弹出层-->
+      <div id="pop" style="top: 0px;">
+        <div id="pop-content"></div>
+      </div>
+      <!-- end pop 弹出层 -->
+      <include file="Public:pop_login" />
+      <include file="Public:pop_reg" />
+      <script type="text/javascript" src="__PUBLIC__/Home/js/showjs.js">
+      </script>
+      <script type="text/javascript" src="__PUBLIC__/static/layer/layer.min.js">
+      </script>
+      <script type="text/javascript" src="__PUBLIC__/static/layer/extend/layer.ext.js">
+      </script>
+      <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.scrollfollow.js">
+      </script>
+      <script type="text/javascript" src="__PUBLIC__/Home/js/common.js">
+      </script>
+      <script type="text/javascript" src="__PUBLIC__/Home/js/toast.js">
+      </script>
+      <script type="text/javascript" charset="utf-8" src="http://fusion.qq.com/fusion_loader?appid=1101738184&amp;platform=qzone">
+      </script>
+      <script type="text/javascript">
+        var Class = {
+          create: function() {
+            return function() {
+              this.initialize.apply(this, arguments);
+            };
+          }
+        };
+        Function.prototype.bind = function(object) {
+          var method = this;
+          return function() {
+            method.apply(object, arguments);
+          };
+        };
+        var Scroll = Class.create();
+        Scroll.prototype = {
+          initialize: function(element, height) {
+            this.element = element;
+            this.element.innerHTML += this.element.innerHTML;
+            this.height = height;
+            this.maxHeight = this.element.scrollHeight / 2;
+            this.counter = 0;
+            this.scroll();
+            this.timer = "";
+            this.element.onmouseover = this.stop.bind(this);
+            this.element.onmouseout = function() {
+              this.timer = setTimeout(this.scroll.bind(this), 1000);
+            }.bind(this);
+          },
+          scroll: function() {
+            if (this.element.scrollTop < this.maxHeight) {
+              this.element.scrollTop++;
+              this.counter++;
+            } else {
+              this.element.scrollTop = 0;
+              this.counter = 0;
+            }
+            if (this.counter < this.height) {
+              this.timer = setTimeout(this.scroll.bind(this), 1);
+            } else {
+              this.counter = 0;
+              this.timer = setTimeout(this.scroll.bind(this), 3000);
+            }
+          },
+          stop: function() {
+            clearTimeout(this.timer);
+          }
+        };
+        var myscroll = new Scroll(document.getElementById("links-list"), 15);
+      </script>
+      <script type="text/javascript">
+        var page = '1';
+        if (page == 2) {
+          login()
+        }
+      </script>
+  </body>
+
+</html>

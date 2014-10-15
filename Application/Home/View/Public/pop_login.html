@@ -1,0 +1,43 @@
+<!-- 登陆弹框 -->
+<div id="login_box" style="display: none;">
+  <div id="wBox_overlay" class="wBox_hide wBox_overlayBG" style="opacity: 0.5; height: 100%; width: 100%; background:#000; z-index: 999999999; position:fixed; top:0; left:0;">
+  </div>
+  <div id="wBox" style=" left:50%; top:50%; margin-left:-295px; margin-top:-200px;display: block; z-index: 1000000000; position:fixed;">
+    <div class="wBox_content" id="wBoxContent" style="position: static;">
+      <div class="landing_contain">
+        <div class="landing_tit">
+          <a title="关闭" href="javascript:void(0)" onclick="wBox_close()" class="wBox_close"></a>登录笑话吧
+        </div>
+        <div class="landing_left">
+          <div class="landing_sontit">用以下帐号快速登录</div>
+          <div class="landing_main">
+            <ul>
+              <li><a id="xlog_qq" onclick="SLogin('qq');" class="landing_qq" title="QQ帐户" href="javascript:;">QQ帐户</a></li>
+              <li><a id="xlog_sina" onclick="SLogin('sina');" class="landing_wb" title="微博帐户" href="javascript:;">微博帐户</a></li>
+            </ul>
+          </div>
+          <div class="landing_register">还没有笑话吧帐号<a title="注册" href="javascript:;" onclick="reg()" id="register_start_btn">立即注册</a></div>
+        </div>
+        <div class="landing_right">
+          <div class="landing_sontit">笑话吧帐号登录</div>
+          <div class="landing_prompt">
+            <div id="error_msg" style="display:none;"><span></span><font id="error_txt"></font></div>
+          </div>
+          <form id="loginform" action="__URL__/login" method="post">
+            <input type="text" name="username" id="i--1" class="landing_text" placeholder="用户名/手机号/邮箱">
+            <input type="password" name="password" id="i--2" placeholder="登录密码" class="landing_text" style="display: inline-block;">
+            <div class="landing_checkbox">
+              <input type="checkbox" checked="checked" value="2592000" name="cookietime">
+              <label>记住密码</label>
+              <a href="" target="_blank">忘记密码了?</a></div>
+            <div class="landing_button">
+              <input type="hidden" name="refurl" value="__SELF__">
+              <button id="xlogin_btn" type="submit">立即登录</button>
+            </div>
+          </form>
+        </div>
+        <div class="landgin_link"></div>
+      </div>
+    </div>
+  </div>
+</div>

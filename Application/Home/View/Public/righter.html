@@ -1,0 +1,180 @@
+<div class="colExtra">
+  <!--<div class="adbox"><script>index_1();</script></div>-->
+  <div class="cebian_box">
+    <div class="guanzhu_box">
+      <p class="tit_font">关注我们</p>
+      <span class="fl">
+        <img src="__PUBLIC__/Home/images/img_033.png" width="144" height="144">
+      </span>
+      <div class="fr guanzhu_box_list">
+        <div class="guanzhu_list">
+          <span>
+            <img src="__PUBLIC__/Home/images/img_05.png" width="45" height="45">
+          </span>
+          <a target="_blank" href="http://weibo.com/p/1005055242322769" class="guanzhu_text fr">新浪微博</a>
+        </div>
+        <div class="clearcyh"></div>
+        <div class="guanzhu_list">
+          <span>
+            <img src="__PUBLIC__/Home/images/img_08.png" width="45" height="45">
+          </span>
+          <a href="http://t.qq.com/weibozxyl1807" class="guanzhu_text fr">腾讯微博</a>
+        </div>
+        <div class="clearcyh"></div>
+        <div class="guanzhu_list">
+          <span>
+            <img src="__PUBLIC__/Home/images/img_10.png" width="45" height="44">
+          </span>
+          <a class="guanzhu_text fr">
+            <iframe src="http://open.qzone.qq.com/like?url=http%3A%2F%2Fuser.qzone.qq.com%2F2818851377&amp;type=button&amp;width=400&amp;height=30&amp;style=3"
+            allowtransparency="true" scrolling="no" border="0" frameborder="0" style="width:100px;height:30px;border:none;overflow:hidden; margin-left:22px; margin-top:12px;">
+            </iframe>
+          </a>
+        </div>
+        <div class="clearcyh"></div>
+      </div>
+      <div class="clearcyh"></div>
+      <div></div>
+    </div>
+    <div class="kuaisu_xiaoliao_box">
+      <div class="woxiaola_post_box">
+        <input class="woxiaola_title" id="woxiaoal_title" placeholder="这里写标题..">
+        <div class="woxiaola_post_hr"></div>
+        <textarea placeholder="过程很精彩，这里写内容.." id="woxiaola_content" class="kuaisu_xiaoliao_wenben"
+        name="kuaisu_xiaoliao" cols="" rows="">
+        </textarea>
+        <div class="woxiaola_post_hr"></div>
+        <input class="woxiaola_title" id="woxiaola_key" placeholder="标签：多个用 , 隔开">
+      </div>
+      <div class="woxiaola_post_key" id="woxiaola_post_key">
+        <a href="javascript:;" onclick="post_add_tag(this)">囧人糗事</a>
+        <a href="javascript:;" onclick="post_add_tag(this)">搞笑图片</a>
+        <a href="javascript:;" onclick="post_add_tag(this)">成人笑话</a>
+        <a href="javascript:;" onclick="post_add_tag(this)">动物萌货</a>
+        <a href="javascript:;" onclick="post_add_tag(this)">内涵</a>
+        <a href="javascript:;" onclick="post_add_tag(this)">邪恶漫画</a>
+        <a href="javascript:;" onclick="post_add_tag(this)">GIF图</a>
+      </div>
+      <div class="woxiaola_post_img" id="woxiaola_post_img"></div>
+      <a class="kuaisu_fabu" href="javascript:;" onclick="post_woxiaola(this)">发布</a>
+      <div class="shangchuan_tupian fl" onclick="login()">
+        <div></div>
+      </div>
+      <div class="clearcyh"></div>
+    </div>
+    <script type="text/javascript" src="__PUBLIC__/static/uploadify/jquery.uploadify.min.js"></script>
+    <script type="text/javascript">
+      $("#upload_picture_woxiaola").uploadify({
+        "height": 29,
+        "swf": "__PUBLIC__/static/uploadify/uploadify.swf",
+        "fileObjName": "imgFile",
+        "buttonText": "",
+        "uploader": "/Addons/execute/_addons/EditorForAdmin/_controller/Upload/_action/ke_upimg.html?dir=image",
+        "width": 94,
+        'removeTimeout': 1,
+        'fileTypeExts': '*.jpg; *.png; *.gif;',
+        "onUploadSuccess": uploadPicture,
+        'onFallback': function() {
+          alert('未检测到兼容版本的Flash.');
+        }
+      });
+
+      function uploadPicture(file, data) {
+        var data = $.parseJSON(data);
+        if (data.error == 0) {
+          var img = '<img src="' + data.url + '">';
+          $('.woxiaola_post_img').append(img).slideDown();
+        }
+      }
+    </script>
+    <div class="biaoqian_box">
+      <p class="tit_font">热门标签</p>
+      <ul class="biaoqian_text">
+        <li>
+          <a href="/zt/jiongrenjiongshi/">囧人糗事</a>
+        </li>
+        <li>
+          <a href="/zt/gaoxiaotupian/">搞笑图片</a>
+        </li>
+        <li>
+          <a href="/zt/crxh/">成人笑话</a>
+        </li>
+        <li>
+          <a href="/zt/dwmh/">动物萌货</a>
+        </li>
+        <li>
+          <a href="/zt/neihan/">内涵</a>
+        </li>
+        <li>
+          <a href="/zt/xieemanhua/">邪恶漫画</a>
+        </li>
+        <li>
+          <a href="/zt/giftu/">GIF图</a>
+        </li>
+      </ul>
+      <div class="clearcyh"></div>
+    </div>
+    <div id="colExtra">
+      <div class="cainixihuan_box">
+        <p class="tit_font fl">猜你喜欢</p>
+        <span class="huanyipi fr">
+          <!--<img src="__PUBLIC__/Home/images/img_14.png" width="12" height="12"/>
+          <a href="#">换一批</a>
+          -->
+        </span>
+        <div class="clearcyh"></div>
+        <ul class="cainixihuan_list">
+          <li>
+            <a href="" target="_blank">
+              <span>
+                <img src="__ROOT__/Uploads/Picture/2014-08-27/53fd8899b9e9c_140x100.jpg" alt="键盘新练习指法">
+              </span>
+              键盘新练习指法
+            </a>
+          </li>
+          <li>
+            <a href="" target="_blank">
+              <span>
+                <img src="__ROOT__/Uploads/Picture/2014-08-27/53fd4e47cc209_140x100.jpg" alt="前后八世笑话">
+              </span>
+              前后八世笑话
+            </a>
+          </li>
+        </ul>
+        <div class="clearcyh"></div>
+      </div>
+      <div class="guanzhu_down">
+        <a href="http://www.woxiaola.com/download/ewm.html" class="down_icon">
+          <img src="__PUBLIC__/Home/images/img_20.png" width="300" height="50">
+        </a>
+        <a target="_blank" href="http://weibo.com/p/1005055242322769" class="bottom_guanzhu">
+          <img src="__PUBLIC__/Home/images/img_23.png" width="92" height="30">
+        </a>
+        <a href="http://t.qq.com/weibozxyl1807" class="bottom_guanzhu">
+          <img src="__PUBLIC__/Home/images/img_25.png" width="92" height="30">
+        </a>
+        <a target="_blank" href="http://user.qzone.qq.com/2818851377">
+          <img src="__PUBLIC__/Home/images/img_27.png" width="92" height="30">
+        </a>
+        <div class="clearcyh"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .affix { position: fixed; bottom: 65px; }
+</style>
+<script type="text/javascript">
+  $(function() {
+    var r_l = $('#colExtra').offset().top;
+    $(window).scroll(function() {
+      $(window).scrollTop()
+      // side = $('#side_nav').offset().top;
+      if ($(window).scrollTop() >= r_l) {
+        $('.cebian_box').addClass('affix');
+      } else {
+        $('.cebian_box').removeClass('affix');
+      }
+    });
+  });
+</script>

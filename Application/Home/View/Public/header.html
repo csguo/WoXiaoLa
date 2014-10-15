@@ -1,0 +1,20 @@
+<div class="header">
+	<div class="headerBg">
+		<div class="headerTop"> 
+			<a href="/" class="logo fl"></a>
+			<ul class="nav fl">
+	        <li class="navHasub navHot"><a href="{:U('Index/index')}" target="_self"><span>首页</span></a></li>
+	        <li class="navHasub navHot"><a href="{:U('Image/index')}" target="_self"><span>搞笑图片</span></a></li>
+	        <li class="navHasub navHot"><a href="{:U('Index/index')}" target="_self"><span>搞笑段子</span></a></li>
+	        <li class="navHasub navHot"><a href="{:U('Index/index')}" target="_self"><span>内涵漫画</span></a></li>
+			</ul>
+			<div class="top_right">
+	      		<if condition="$uname neq ''">
+	      			<a href="">test</a>|<a href="javascript:;" onclick="logout(__SELF__,this)">退出</a></div>
+				<else />
+					<a href="javascript:;" onclick="login()">登陆</a>|<a href="javascript:;" onclick="reg()">注册</a>
+				</if>
+			</div>
+		</div>
+	</div>
+</div>

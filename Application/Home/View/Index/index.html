@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <include file="Public:headinc" />
+  </head>
+  
+  <body id="index">
+    <!-- 头部 -->
+    <include file="Public:header" />
+    <div class="container mt20">
+      <div class="content">
+        <div class="colMain">
+          <div class="listViewElement">
+            <div class="entryCollection">
+              <!--内容列表-->
+              <foreach name="list" item="val">
+                <div class="article none page2" id="container11" style="display: block;">
+                  <div class="title">
+                    <div class="itemTitle">
+                      <h2 class=""><a target="_blank" href="{:U('Index/Details',array('id'=>$val['id']),'')}" class="evt">{$val['title']}</a></h2>
+                    </div>
+                  </div>
+                  <div class="postContainer" style="position: static; width: auto;height: auto;">
+                    <div class="slideBar" style="float: right; position: relative; margin-right: 80px; ">
+                      <div class="bar" style="position: static;">
+                        <div id="fudong{$val['id']}" class="fundong" style="position: absolute; margin-top: -30px; margin-left: -58px; top: 1194px;">
+                          <div class="entrySticky">
+                            <div class="floatVote2">
+                              <ul class="itemVoteContainer" liketype="{$val['type']}" authorid="{$val['author_id']}" dataid="{$val['id']}">
+                                <li>
+                                  <a href="javascript:void(0);" class="itemVoteUpgood" title="顶" onclick="dingcai('ding','{$val['id']}',this)">
+                                    <span class="icon"></span>
+                                  </a>
+                                </li>
+                                <li class="count">
+                                  <span class="itemLoveCount" id="dingcai_ding_{$val['id']}">{$val['ding']}</span>
+                                </li>
+                                <li>
+                                  <a href="javascript:void(0);" class="itemVoteDownmeh" title="踩" onclick="dingcai('cai','{$val['id']}',this)">
+                                    <span class="icon"></span>
+                                  </a>
+                                </li>
+                                <li class="count">
+                                  <span class="itemLoveCount" id="dingcai_cai_{$val['id']}">{$val['cai']}</span>
+                                </li>
+                                <li style="height:10px;">
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="animatedContainerStatic" onclick="" style="font-size:14px; line-height:22px; width:78%;">{$val['content']}
+                    </div>
+                    <div class="clearcyh">
+                    </div>
+                  </div>
+                  <div id="bdshare" class="postShare mt12 bdshare_t bds_tools get-codes-bdshare"
+                  style="width: 240px;">
+                    <span class="share">分享给朋友乐一下</span>
+                    <span class="shareVline"></span>
+                    <a class="bds_tsina" title="分享：一大爷钓鱼钓的已经走火入魔了。" href="http://www.jiathis.com/send/?webid=tsina&amp;url=http://wxl.qh84.com&amp;title=一大爷钓鱼钓的已经走火入魔了。-我笑了&amp;summary=哈哈哈哈哈&amp;pic=http://wxl.qh84.com/Uploads/Picture/2014-08-18/53f1720868797.jpg">
+                    </a>
+                    <a class="bds_qzone" title="分享：一大爷钓鱼钓的已经走火入魔了。" href="http://www.jiathis.com/send/?webid=qzone&amp;url=http://wxl.qh84.com&amp;title=一大爷钓鱼钓的已经走火入魔了。-我笑了&amp;summary=哈哈哈哈哈&amp;pic=http://wxl.qh84.com/Uploads/Picture/2014-08-18/53f1720868797.jpg">
+                    </a>
+                    <a class="bds_renren" title="分享：一大爷钓鱼钓的已经走火入魔了。" href="http://www.jiathis.com/send/?webid=renren&amp;url=http://wxl.qh84.com&amp;title=一大爷钓鱼钓的已经走火入魔了。-我笑了&amp;summary=哈哈哈哈哈&amp;pic=http://wxl.qh84.com/Uploads/Picture/2014-08-18/53f1720868797.jpg">
+                    </a>
+                  </div>
+                  <div class="border_bg"></div>
+                  <!--comment-->
+                  <script type="text/javascript">
+                    $(document).ready(function() {
+                      getcomment({$val['id']});
+                    });
+                  </script>
+                  <div id="showcomment_{$val['id']}"></div>
+                  <!--comment-->
+                </div>
+              </foreach>
+              <!--内容列结束表-->
+            </div>
+            <!--分页-->
+            <div class="page" id="pagination" style="">{$pageString}</div>
+            <!--分页结束-->
+          </div>
+        </div>
+        <!-- 右侧 -->
+        <include file="Public:righter" />
+      </div>
+    </div>
+    <!-- 底部 -->
+    <include file="Public:footer" />
+    <div>
+    </div>
+    <!-- mask 遮罩 -->
+    <div id="mask">
+      <iframe>
+      </iframe>
+    </div>
+    <!-- end mask 遮罩 -->
+    <!-- pop 弹出层-->
+    <div id="pop" style="top: 0px;">
+      <div id="pop-content">
+      </div>
+    </div>
+    <!-- end pop 弹出层 -->
+    <include file="Public:pop_login" />
+    <include file="Public:pop_reg" />
+    <script type="text/javascript" src="__PUBLIC__/Home/js/showjs.js">
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/static/layer/layer.min.js">
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/static/layer/extend/layer.ext.js">
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.scrollfollow.js">
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/common.js">
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/toast.js">
+    </script>
+    <script type="text/javascript" charset="utf-8" src="http://fusion.qq.com/fusion_loader?appid=1101738184&amp;platform=qzone">
+    </script>
+    <script type="text/javascript">
+      var Class = {
+        create: function() {
+          return function() {
+            this.initialize.apply(this, arguments);
+          };
+        }
+      };
+      Function.prototype.bind = function(object) {
+        var method = this;
+        return function() {
+          method.apply(object, arguments);
+        };
+      };
+      var Scroll = Class.create();
+      Scroll.prototype = {
+        initialize: function(element, height) {
+          this.element = element;
+          this.element.innerHTML += this.element.innerHTML;
+          this.height = height;
+          this.maxHeight = this.element.scrollHeight / 2;
+          this.counter = 0;
+          this.scroll();
+          this.timer = "";
+          this.element.onmouseover = this.stop.bind(this);
+          this.element.onmouseout = function() {
+            this.timer = setTimeout(this.scroll.bind(this), 1000);
+          }.bind(this);
+        },
+        scroll: function() {
+          if (this.element.scrollTop < this.maxHeight) {
+            this.element.scrollTop++;
+            this.counter++;
+          } else {
+            this.element.scrollTop = 0;
+            this.counter = 0;
+          }
+          if (this.counter < this.height) {
+            this.timer = setTimeout(this.scroll.bind(this), 1);
+          } else {
+            this.counter = 0;
+            this.timer = setTimeout(this.scroll.bind(this), 3000);
+          }
+        },
+        stop: function() {
+          clearTimeout(this.timer);
+        }
+      };
+      var myscroll = new Scroll(document.getElementById("links-list"), 15);
+    </script>
+    <script type="text/javascript">
+      var page = '1';
+      if (page == 2) {
+        login()
+      }
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,63 @@
+<div id="reg_box" style="display: none;">
+  <div id="wBox_overlay" class="wBox_hide wBox_overlayBG" style="opacity: 0.5; height: 100%; width: 100%; background:#000; z-index: 999999999; position:fixed; top:0; left:0;"></div>
+  <div id="wBox" style=" left:50%; top:50%; margin-left:-345px; margin-top:-270px;display: block; z-index: 1000000000; position:fixed;">
+    <div class="wBox_content" id="wBoxContent" style="position: static;">
+      <div class="landing_contain2"> <!-- 登陆标题 start -->
+        <div class="landing_tit"><a title="关闭" href="javascript:void(0)" onclick="wBox_close()" class="wBox_close"></a>注册笑话吧</div>
+        <!-- 登陆标题 end --> <!-- 登陆左块 start -->
+        <div class="landing_left">
+          <div class="landing_sontit">用以下帐号快速注册</div>
+          <div class="landing_main">
+            <ul>
+              <li><a id="xlog_qq" onclick="SLogin('qq');" class="landing_qq" title="QQ帐户" href="javascript:;">QQ帐户</a></li>
+              <li><a id="xlog_sina" onclick="SLogin('sina');" class="landing_wb" title="微博帐户" href="javascript:;">微博帐户</a></li>
+            </ul>
+          </div>
+          <div class="landing_register">已有笑话吧帐号<a title="注册" href="javascript:;" onclick="login();" id="register_start_btn">立即登陆</a></div>
+        </div>
+        <!-- 登陆左块 end --> <!-- 登陆右块 start -->
+        <div class="landing_right">
+          <div class="join_tit">笑话吧帐号注册</div>
+          <!-- 错误提示 -->
+          <div class="landing_right xcarRegister_mainR"> 
+            <!-- 用户名注册 start -->
+            <div class="landing_registerMain xcarRegister_mainRY" id="register_n" style="display: block;">
+              <div class="landing_prompt">
+                <div id="rerror_msg" style="display:none;"><span></span><font id="rerror_txt"></font></div>
+              </div>
+              <form name="form_n" action="/User/register.html" method="post" id="reform">
+                <div>
+                  <label class="xcarRegister_label">用户名：</label>
+                  <input type="text" placeholder="取一个独特的名字，字母汉字数字均可" name="username" id="r--1" class="landing_text">
+                </div>
+                <div>
+                  <label class="xcarRegister_label">登录密码：</label>
+                  <input type="password" placeholder="6-16位英文字母、符号或数字" name="password" id="r--2" class="landing_text">
+                </div>
+                <div>
+                  <label class="xcarRegister_label">确认密码：</label>
+                  <input type="text" placeholder="请再次输入密码" name="repassword" id="r--3" class="landing_text">
+                </div>
+                <div>
+                  <label class="xcarRegister_label">电子邮件：</label>
+                  <input type="email" placeholder="用于确认身份及找回用户名和密码" name="email" id="r--4" class="landing_text">
+                </div>
+                <div>
+                  <label class="xcarRegister_label">验证码：</label>
+                  <input type="text" id="r--5" name="verify" placeholder="请输入验证码" class="landing_check" maxlength="5">
+                  <img id="chk_img" class="verifyimg reloadverify" style="height:38px; margin-bottom:7px;" name="chk_img" src="/User/verify.html"> <a id="checkpincode" class="reloadverify" href="javascript:pincode();">换一组</a> </div>
+                <div class="landing_button landing_buttonT">
+                  <button type="submit" id="button_n">提交注册</button>
+                </div>
+              </form>
+            </div> 
+          <!-- 用户名注册 end --> 
+          </div>
+        </div>
+        <!-- 登陆右块 end --> <!-- 分割线 start -->
+        <div class="landgin_link"></div>
+      <!-- 分割线 end -->
+      </div>
+    </div>
+  </div>
+</div>
