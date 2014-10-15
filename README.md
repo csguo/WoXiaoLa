@@ -1,6 +1,6 @@
 ## 简介
 
-此项目是模仿我笑啦 http://www.woxiaola.com之作。
+此项目是模仿我笑啦 http://www.woxiaola.com   空闲之作。
 主要实现一步AJAX数据加载，无线级评论分页加载。
 顶踩及部分Js,Css页面效果。
 
